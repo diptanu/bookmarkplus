@@ -1,0 +1,14 @@
+#header_wrapper{
+    margin: 10px;
+}
+#logoContainer{
+    float: left;
+}
+#global{
+    float: right;
+}
+
+#logo_text{
+    font-height: 16px;
+    color: blue;
+}

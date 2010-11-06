@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Your Bookmarks</title>
+	<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	
+	<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen">
+</head>
+<body>
+	<div class="container">
+		<div class="span-24 last">
+			<div id="header_wrapper">
+			<div id="logoContainer"><span id="logo_text">BookMarks<span></div><div id="global">Hey {{ user_name }}<a href={{ logout_url}}>Logout </a></div>
+			</div>
+		</div>
+		<div class="span-4">1</div>
+		<div class="span-16">
+			<form id="url" method="post">
+				<p>
+					<label for="url_text">URL </label>
+					<input type="text" name="url_text">
+					<input type="submit" value="Enter">
+				</p>
+			</form>
+		</div>
+		<div class="span-4 last">2</div>
+		<div class="span-24 last">
+			<div style="margin: 20px;">
+				{% for url in urls %}
+				<a href="{{ url.url }}">{{ url.url }}</a><br>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
