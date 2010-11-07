@@ -24,6 +24,8 @@ class MainHandler(webapp.RequestHandler):
         
     def post(self):
         user = users.get_current_user()
+        if user is None:
+            self.redirect('/')
         url = self.request.get('url_text')
         book_mark = Bookmark(user = user, url = url)
         book_mark.put()
