@@ -12,3 +12,14 @@
     font-height: 16px;
     color: blue;
 }
+
+#form-container{
+    margin: 20em;
+}
+
+#url_input{
+    width: 30em;
+    height: 3em;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+}

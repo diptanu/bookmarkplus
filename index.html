@@ -18,19 +18,16 @@
 			<div id="logoContainer"><span id="logo_text">BookMarks<span></div><div id="global">Hey {{ user_name }}<a href={{ logout_url}}>Logout </a></div>
 			</div>
 		</div>
-		<div class="span-4">1</div>
-		<div class="span-16">
+		<div class="span-16" id="form-container">
 			<form id="url" method="post">
 				<p>
-					<label for="url_text">URL </label>
-					<input type="text" name="url_text">
+					<input id="url_input" type="text" name="url_text" value="Enter URL here">
 					<input type="submit" value="Enter">
 				</p>
 			</form>
 		</div>
-		<div class="span-4 last">2</div>
 		<div class="span-24 last">
-			<div style="margin: 20px;">
+		    <div style="margin: 20px;">
 				{% for url in urls %}
 				<a href="{{ url.url }}">{{ url.url }}</a><br>
 				{% endfor %}
