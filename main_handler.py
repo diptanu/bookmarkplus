@@ -15,6 +15,7 @@ class MainHandler(webapp.RequestHandler):
         logout_url = users.create_logout_url(self.request.uri)
         username = user.nickname() if user is not None else ""
         urls_query = Bookmark.all()
+        urls_query.filter('user =', user)
         urls = urls_query.fetch(10)
         logging.error(urls)
         template_values = {'user_name': username, 'logout_url': logout_url, 'urls': urls}
