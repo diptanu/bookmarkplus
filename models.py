@@ -6,4 +6,9 @@ class Bookmark(db.Model):
     url = db.StringProperty()
     description = db.StringProperty()
     date = db.DateTimeProperty(auto_now_add=True)
+
+
+class Tag(db.Model):
+    name = db.StringProperty()
+    
     
