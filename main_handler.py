@@ -4,7 +4,7 @@ import logging
 from google.appengine.api import users
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
-from models import Bookmark
+from models import Bookmark, Tag
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
@@ -28,7 +28,22 @@ class MainHandler(webapp.RequestHandler):
         if user is None:
             self.redirect('/')
         url = self.request.get('url_text')
-        book_mark = Bookmark(user = user, url = url)
+        tags = self.request.get('url_tag').split(",")
+
+        usable_tags = []
+        for tag_name in tags:
+            if len(tag_name) is 0:
+                continue
+            tag = Tag(name = tag_name)
+            tags_query = Tag.all()
+            tags_query.filter('name =', tag_name)
+            
+            if len(tags_query.fetch(1)) is not 0:
+                continue
+            tag.put()
+            usable_tags.append(tag.key())
+        
+        book_mark = Bookmark(user = user, url = url, tags = usable_tags)
         book_mark.put()
         self.redirect('/')
         
