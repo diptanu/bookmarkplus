@@ -1,4 +1,5 @@
 var textBoxInit = true;
+var tagBoxInit = true;
 
 $(document).ready(
     function(){
@@ -8,6 +9,14 @@ $(document).ready(
                     $('#url_input').val("");
                     textBoxInit = false;
                     
+                }
+            });
+
+        $('#url_tag').focus(
+            function(){
+                if(tagBoxInit){
+                    $('#url_tag').val("");
+                    tagBoxInit = false;
                 }
             });
 });
