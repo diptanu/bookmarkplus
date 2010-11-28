@@ -8,7 +8,6 @@ $(document).ready(
                 if(textBoxInit){
                     $('#url_input').val("");
                     textBoxInit = false;
-                    
                 }
             });
 

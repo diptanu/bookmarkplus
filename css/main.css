@@ -33,6 +33,7 @@
 
 .main_button input{
     -moz-border-radius:6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
     -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.6);
     background:url("/img/btn_bg.png") repeat-x scroll 0 0 #FF5C00;
     border:0 none;
