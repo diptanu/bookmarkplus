@@ -19,7 +19,7 @@ class MainHandler(webapp.RequestHandler):
         urls = urls_query.fetch(10)
         logging.error(urls)
         template_values = {'user_name': username, 'logout_url': logout_url, 'urls': urls}
-        path = os.path.join(os.path.dirname(__file__), 'index.html')
+        path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
         self.response.out.write(template.render(path, template_values))
         
         
