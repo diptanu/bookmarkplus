@@ -31,7 +31,8 @@
           </div>
           <div id="top_menu">
             <a href="/recent">Recent</a>
-            <a href="/logout">Logout</a>
+            <span>{{ user_name }}</span>
+            <a href="{{ logout_url }}">Logout</a>
           </div>
           <div style="clear: both;"></div>
         </div>
@@ -52,32 +53,41 @@
           <span id = "save_success_msg">Hello</span>
           <div id="form_bookmark">
             <form id = "new_bookmark" method="post">
-	    <h3>Save a new Bookmark!</h3>
-	    <fieldset>
-              <label class="field-first">URL &#42;<input id = "url_text" type="text"
-                                                         name="url_text" value="" placeholder="Enter URL here"/></label>
-              <label class="field-address">Tags, separated by commas
-                &#42;<input type="text" id = "url_tag" name="url_tag" value="" placeholder="Enter Tags here" /></label>            
-            </fieldset>
-            <h3>More</h3>
-	    <fieldset>	
-	      <label class="field-describe">Describe the
-	      page<br /><textarea id = "url_description" name="describe" cols="40" rows="5"></textarea></label>
-	    </fieldset>
-            <fieldset>
-	      <label>Click &#8220;Submit&#8221; below!</label>
-	      <span class="main_button">
-                <input type="submit" name="submit" id="submit" value="Submit" />
-              </span>
-              <span class = "main_button">
-                <input type="cancel" name="cancel" id="cancel" value = "Cancel">
-              </span>
-	      <input type="hidden" name="submitted" value="TRUE" />
-	    </fieldset>
-          </form>
-            </div>
-        </div>
-        <div style="clear: both;"></div>
+	      <h3>Save a new Bookmark!</h3>
+	      <fieldset>
+                <label class="field-first">URL &#42;<input id = "url_text" type="text"
+                                                           name="url_text" value="" placeholder="Enter URL here"/></label>
+                <label class="field-address">Tags, separated by commas
+                  &#42;<input type="text" id = "url_tag" name="url_tag" value="" placeholder="Enter Tags here" /></label>            
+              </fieldset>
+              <h3>More</h3>
+	      <fieldset>	
+	        <label class="field-describe">Describe the
+	          page<br /><textarea id = "url_description" name="describe" cols="40" rows="5"></textarea></label>
+	      </fieldset>
+              <fieldset>
+	        <label>Click &#8220;Submit&#8221; below!</label>
+	        <span class="main_button">
+                  <input type="submit" name="submit" id="submit" value="Submit" />
+                </span>
+                <span class = "main_button">
+                  <input type="cancel" name="cancel" id="cancel" value = "Cancel">
+                </span>
+	        <input type="hidden" name="submitted" value="TRUE" />
+	      </fieldset>
+            </form>
+          </div>
+          <div id="threaded_view">
+            <div class="page_title"><h3>Bookmarks</h3></div>
+	  </div>
+	  <div id="threded_list">
+            {% for url in urls %}
+			<div class="thread_item">
+			<a href="{{ url.url }}">{{ url.url }}</a>
+			</div>
+			{% endfor %}
+	  </div>
+          <div style="clear: both;"></div>
         
       </div>
       
@@ -97,11 +107,7 @@
     
     
     <!--[if lt IE 7 ]><script src="static/js/libs/dd_belatedpng.js"></script>
-        <script>DD_belatedPNG.fix("img, .png_bg");</script><![endif]-->
-
-    
-
-
+    <script>DD_belatedPNG.fix("img, .png_bg");</script><![endif]-->
     
     <script>var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];(function(e,a){var c=e.createElement(a),b=e.getElementsByTagName(a)[0];c.async=true;c.src=("https:"==location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";b.parentNode.insertBefore(c,b)})(document,"script");</script>
     
