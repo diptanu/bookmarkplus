@@ -30,34 +30,49 @@
             <a id="bookmarkplus_name" href="/">BookmarkPlus</a>
           </div>
           <div id="top_menu">
-            <a href="/logout">Logout</a>
             <a href="/recent">Recent</a>
+            <a href="/logout">Logout</a>
           </div>
           <div style="clear: both;"></div>
         </div>
       </header>
       
       <div id=main>
-      	<form method="post">
-	  <h3>Save a new Bookmark!</h3>
-	  <fieldset>
-            <label class="field-first">URL &#42;<input type="text"
-            name="url_text" value="" placeholder="Enter URL here"/></label>
-            <label class="field-address">Tags, separated by commas
-            &#42;<input type="text" name="url_tag" value="" placeholder="Enter Tags here" /></label>            
-          </fieldset>
-          <h3>More</h3>
-	  <fieldset>	
-	    <label class="field-describe">Describe the page<br /><textarea name="describe" cols="40" rows="5"></textarea></label>
-	  </fieldset>
-          <fieldset>
-	    <label>Click &#8220;Submit&#8221; below!</label>
-	    <span class="main_button">
-              <input type="submit" name="submit" value="Submit" />
-            </span>
-	    <input type="hidden" name="submitted" value="TRUE" />
-	  </fieldset>
-        </form>
+        <div id = "tools">
+          <ol>
+            <li>
+              <a href="#">Add a link</a>
+            </li>
+            <li>
+              <a href="#">Categories</a>
+            </li>
+          </ol>
+        </div>
+        <div id = "content">
+          <span id="save_success_msg">Your link has been saved</span>
+          <form method="post">
+	    <h3>Save a new Bookmark!</h3>
+	    <fieldset>
+              <label class="field-first">URL &#42;<input type="text"
+                                                         name="url_text" value="" placeholder="Enter URL here"/></label>
+              <label class="field-address">Tags, separated by commas
+                &#42;<input type="text" name="url_tag" value="" placeholder="Enter Tags here" /></label>            
+            </fieldset>
+            <h3>More</h3>
+	    <fieldset>	
+	      <label class="field-describe">Describe the page<br /><textarea name="describe" cols="40" rows="5"></textarea></label>
+	    </fieldset>
+            <fieldset>
+	      <label>Click &#8220;Submit&#8221; below!</label>
+	      <span class="main_button">
+                <input type="submit" name="submit" value="Submit" />
+              </span>
+	      <input type="hidden" name="submitted" value="TRUE" />
+	    </fieldset>
+          </form>
+        </div>
+        <div style="clear: both;"></div>
+        
       </div>
       
       <footer>
@@ -74,7 +89,7 @@
     
     
     <!--[if lt IE 7 ]><script src="static/js/libs/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix("img, .png_bg");</script><![endif]-->
+        <script>DD_belatedPNG.fix("img, .png_bg");</script><![endif]-->
 
     
 

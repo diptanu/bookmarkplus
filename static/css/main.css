@@ -13,7 +13,7 @@
 
 #banner{
     background: none repeat scroll 0 0 white;
-    border-bottom: 1px dotted #AAAAAA
+    border-bottom: 4px dotted #AAAAAA;
     color: black;
     margin-bottom: 0.7em;
     padding-bottom: 9px;
@@ -22,5 +22,38 @@
 }
 
 #banner #logo a{
-    color: #AAAAAA
+    color: #AAAAAA;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#banner #logo{
+    float: left;
+}
+
+#banner #top_menu{
+    float: right;
+}
+
+#container {
+    margin-left: 20em;
+    margin-right: 20em;
+}
+
+#tools{
+    margin-right: 5em;
+    padding-right: 2em;
+    border-right: 2px solid grey;
+}
+
+#main #tools{
+    float:left;
+}
+
+#main #content{
+    float:left;
+}
+
+#save_success_msg{
+    display: none;
 }
