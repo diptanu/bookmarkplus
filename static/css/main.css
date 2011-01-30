@@ -52,3 +52,7 @@
     -moz-border-radius:6px 6px 6px 6px;
     border-radius: 6px 6px 6px 6px;
 }
+
+.thread_item{
+    margin-bottom: 0.5em;
+}

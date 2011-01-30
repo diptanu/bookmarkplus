@@ -2,6 +2,7 @@ import os
 import logging 
 
 from google.appengine.api import users
+from google.appengine.api import memcache
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from models import Bookmark, Tag
@@ -14,9 +15,13 @@ class MainHandler(webapp.RequestHandler):
         
         logout_url = users.create_logout_url(self.request.uri)
         username = user.nickname() if user is not None else ""
-        urls_query = Bookmark.all() 
+        urls_query = Bookmark.all()
+        last_cursor = memcache.get('bookmark_cursor')
+        if last_cursor:
+            urls_query.with_cursor(last_cursor)
         urls_query.filter('user =', user)
         urls = urls_query.fetch(10)
+        memcache.set('bookmark_cursor', urls_query.cursor())
         logging.error(urls)
         template_values = {'user_name': username, 'logout_url': logout_url, 'urls': urls}
         path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
