@@ -37,11 +37,11 @@
         </div>
       </header>
       
-      <div id=main>
+      <div id = "main">
         <div id = "tools">
           <ol>
             <li>
-              <a href="#">Add a link</a>
+              <a href="#" id = "add_link">Add a link</a>
             </li>
             <li>
               <a href="#">Categories</a>
@@ -49,27 +49,33 @@
           </ol>
         </div>
         <div id = "content">
-          <span id="save_success_msg">Your link has been saved</span>
-          <form method="post">
+          <span id = "save_success_msg">Your link has been saved</span>
+          <div id="form_bookmark">
+            <form id = "new_bookmark" method="post">
 	    <h3>Save a new Bookmark!</h3>
 	    <fieldset>
-              <label class="field-first">URL &#42;<input type="text"
+              <label class="field-first">URL &#42;<input id = "url_text" type="text"
                                                          name="url_text" value="" placeholder="Enter URL here"/></label>
               <label class="field-address">Tags, separated by commas
-                &#42;<input type="text" name="url_tag" value="" placeholder="Enter Tags here" /></label>            
+                &#42;<input type="text" id = "url_tag" name="url_tag" value="" placeholder="Enter Tags here" /></label>            
             </fieldset>
             <h3>More</h3>
 	    <fieldset>	
-	      <label class="field-describe">Describe the page<br /><textarea name="describe" cols="40" rows="5"></textarea></label>
+	      <label class="field-describe">Describe the
+	      page<br /><textarea id = "url_description" name="describe" cols="40" rows="5"></textarea></label>
 	    </fieldset>
             <fieldset>
 	      <label>Click &#8220;Submit&#8221; below!</label>
 	      <span class="main_button">
-                <input type="submit" name="submit" value="Submit" />
+                <input type="submit" name="submit" id="submit" value="Submit" />
+              </span>
+              <span class = "main_button">
+                <input type="cancel" name="cancel" id="cancel" value = "Cancel">
               </span>
 	      <input type="hidden" name="submitted" value="TRUE" />
 	    </fieldset>
           </form>
+            </div>
         </div>
         <div style="clear: both;"></div>
         
@@ -81,11 +87,13 @@
     </div> 
 
     
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script>!window.jQuery&&document.write(unescape('%3Cscript src="script/js/libs/jquery-1.4.2.min.js"%3E%3C/script%3E'));</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script>!window.jQuery&&document.write(unescape('%3Cscript src="static/js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'));</script>
     
     
     <script src='static/js/scripts-0002.min.js'></script>
+    <script src='static/js/main.js'></script>
+    <script src='static/js/form.js'></script>
     
     
     <!--[if lt IE 7 ]><script src="static/js/libs/dd_belatedpng.js"></script>
