@@ -47,4 +47,8 @@
 
 #form_bookmark{
     display:none;
+    background-color: #AAAAAA;
+    padding: 2px;
+    -moz-border-radius:6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
 }

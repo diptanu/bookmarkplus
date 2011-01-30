@@ -18,10 +18,13 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
 from main_handler import MainHandler
+from ajax_handler import FormHandler
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler)],
-                                         debug=True)
+    application = webapp.WSGIApplication([
+            ('/', MainHandler), 
+            ('/ajax/new_bookmark/', FormHandler)
+            ],debug=True)
                                          
     util.run_wsgi_app(application)
 

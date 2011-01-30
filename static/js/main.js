@@ -5,3 +5,4 @@ $('#add_link').click(function(){
 $('#cancel').click(function(){
   $('#form_bookmark').hide();
 })
+
